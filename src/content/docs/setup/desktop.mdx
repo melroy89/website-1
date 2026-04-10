@@ -29,6 +29,22 @@ To install it, run the following command:
 flatpak install flathub io.vikunja.Vikunja
 ```
 
+## Logging in
+
+<Callout type="info">
+The OAuth-based desktop login is available from Vikunja **2.3.0** onwards.
+</Callout>
+
+The first time you open the desktop app, you'll be asked to pick which server to connect to:
+
+- **Vikunja Cloud:** connect to the hosted [Vikunja Cloud](https://vikunja.cloud) service.
+- **Try Demo:** connect to `try.vikunja.io`, the public demo instance.
+- **Custom Server:** enter the URL of your own self-hosted Vikunja instance.
+
+After you pick a server, the desktop app opens your system browser and walks you through an OAuth 2.0 sign-in flow. This is the same flow a browser login uses, so if your instance is configured with an external identity provider (for example via OIDC), you can sign in through it here as well. Once you approve the sign-in, the browser hands control back to the desktop app automatically and you land in Vikunja.
+
+This is built on Vikunja's [OAuth 2.0 authorization server](/docs/oauth-server), so the same mechanism can be used by other clients and integrations.
+
 ## Quick-entry window
 
 <Callout type="info">
