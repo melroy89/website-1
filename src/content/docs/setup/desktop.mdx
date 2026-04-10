@@ -2,9 +2,10 @@
 title: Desktop Packages
 slug: desktop-packages
 description: >-
-  Learn how to install Vikunja's desktop app for Linux and Windows. Download
-  options, installation steps, and Flatpak instructions included.
+  Learn how to install and use Vikunja's desktop app. Covers installation,
+  Flatpak, the quick-entry window, system tray, and command-line flags.
 ---
+import Callout from '../../../components/Callout.astro';
 
 Vikunja is available as an electron-based desktop application for Linux and Windows.
 For advanced desktop instructions, see [the desktop README](https://github.com/go-vikunja/vikunja/blob/main/desktop/README.md).
@@ -27,3 +28,39 @@ To install it, run the following command:
 ```sh
 flatpak install flathub io.vikunja.Vikunja
 ```
+
+## Quick-entry window
+
+<Callout type="info">
+The quick-entry window is available from Vikunja **2.3.0** onwards.
+</Callout>
+
+The desktop app has a dedicated **quick-entry window**: a small popup you can open from anywhere on your system to add a task without first switching to the main Vikunja window.
+
+### Opening the popup
+
+Press the global shortcut to open the popup. The default is `Ctrl` + `Shift` + `A` (or `Cmd` + `Shift` + `A` on macOS).
+
+You can change the shortcut in **Settings > General**, under the Desktop section. Click the shortcut recorder and press the key combination you want to use.
+
+You can also open the popup from the [system tray](#system-tray) or by launching the app with the [`--quick-entry`](#command-line-flags) flag.
+
+### Creating a task
+
+The popup uses the same quick-entry interface as the [dashboard quick-add bar](/help/dashboard#quick-add-bar), so you can use [Quick Add Magic](/help/quick-add-magic) to set due dates, labels, priorities, assignees, and the target project while you type.
+
+- **Enter** creates the task and closes the popup.
+- **`Ctrl`** / **`Cmd`** + **Enter** creates the task and opens it in the main Vikunja window.
+- **Esc** closes the popup without creating a task.
+
+## System tray
+
+The desktop app places an icon in your system tray with these entries:
+
+- **Show Vikunja:** open or focus the main window.
+- **Quick Add Task:** open the [quick-entry window](#quick-entry-window). The current global shortcut is shown next to the menu item.
+- **Quit:** close the app entirely.
+
+## Command-line flags
+
+- `--quick-entry`: launch the app and immediately open the [quick-entry window](#quick-entry-window). If Vikunja is already running, this opens the popup in the existing instance instead of starting a second one. This is useful if you want to bind your own shortcut or launcher to the quick-entry window.
