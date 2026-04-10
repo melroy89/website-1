@@ -18,6 +18,14 @@ You can find your CalDAV connection details in your [Settings](/help/settings) u
 
 <Screenshot src="caldav-connection-details" alt="CalDAV connection details in settings" />
 
+## Authentication
+
+When you connect a CalDAV client, use your Vikunja **username** and one of the following as the password:
+
+- **A dedicated CalDAV token** generated on the CalDAV settings tab. This is the recommended option for most users.
+- **Your account password**, if your account is a local account (not via LDAP or OIDC) and two-factor authentication is not enabled.
+- **An [API token](/help/settings#api-tokens) with the CalDAV permission group**, available from Vikunja **2.3.0** onwards. Use the token value (it starts with `tk_`) as the password. This is handy if you want to manage all your automation credentials in one place, or if you want a single token to cover both CalDAV sync and API access.
+
 ## URLs
 
 All URLs are located under the `/dav` subspace.
